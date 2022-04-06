@@ -23,6 +23,6 @@ test_dataframe = rbind(test_dataframe, c(1, 1))
 
 model_results <- compute(xor_model, test_dataframe)
 
-predicted_strength <- model_results$net.result
+predicted_output <- model_results$net.result
 
-predicted_strength
+predicted_output

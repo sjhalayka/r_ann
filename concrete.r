@@ -15,8 +15,13 @@ names(xor_dataframe)[3]<-paste("output")
 
 xor_model <- neuralnet(output ~ input_a + input_b, hidden = 5, data = xor_dataframe)
 
- # Use columns 1 through 2 (in other words, ignore the 3rd column)
-model_results <- compute(xor_model, xor_dataframe[1:2])
+test_dataframe <- data.frame(c(), c())
+test_dataframe = rbind(test_dataframe, c(0, 0))
+test_dataframe = rbind(test_dataframe, c(1, 0))
+test_dataframe = rbind(test_dataframe, c(0, 1))
+test_dataframe = rbind(test_dataframe, c(1, 1))
+
+model_results <- compute(xor_model, test_dataframe)
 
 predicted_strength <- model_results$net.result
 

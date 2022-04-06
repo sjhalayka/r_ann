@@ -15,7 +15,7 @@ names(xor_dataframe)[3]<-paste("output")
 
 xor_model <- neuralnet(output ~ input_a + input_b, hidden = 5, data = xor_dataframe);
 
-model_results <- compute(xor_model, xor_dataframe[1:2])
+model_results <- compute(xor_model, xor_dataframe[1:2]) # Use columns 1 throuh 2
 
 model_results
 
